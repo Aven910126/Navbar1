@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>導覽列</title>
+</head>
+<style>
+    .LOGO{
+        color: #fff;
+        padding: 20px 16px;
+        float: left;
+        font-size: 20px;
+    }
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0; 
+        background:linear-gradient(blue,skyblue);
+        overflow: hidden;
+    }
+    li{
+        float: left;
+    }
+    li a{
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
+        padding: 20px 16px;
+        font-size: 18px;
+        transition: 0.5s;
+    }
+    li a:hover{
+        background:blue;
+    }
+    .dropc{
+        background:linear-gradient(blue,skyblue);
+        position: absolute;
+        min-width: 160px;
+        z-index: 1;
+        transition: 3s;
+        display: none;
+    }
+    .s:hover .dropc{
+        display: block;
+        animation: down 1s;
+        
+    }
+    .X{
+        position: absolute;
+        right: 20px;
+        display: none;
+    }
+    .d{
+        animation: jj 1s;
+        display: block;
+    }
+    @keyframes down{
+        0%{
+            height: 0%;
+        }
+        100%{
+            height: 183px;
+        }
+    }
+    @keyframes jj{
+        0%{
+            transform:translateY(-100%);
+        }
+        100%{
+            transform:translateY(2%);
+        }
+    }
+    @media screen and (max-width:768px) {
+        .LOGO{
+            float: none;
+        }
+        li{
+            float: none;
+            display: none;
+        }
+        .X{
+            display: block;
+        }
+    }
+</style>
+<body>
+        <ul>
+            <div class="LOGO">logo</div>
+            <li class="a"><a href="">Home</a></li>
+            <li class="a"><a href="">About</a></li>
+            <li  class="s a">
+                <a href="">Content</a>
+                <div class="dropc">
+                    <a href="">Link1</a>
+                    <a href="">Link2</a>
+                    <a href="">Link3</a>
+                </div>
+            </li>
+        </ul>
+</body>
+</html>
